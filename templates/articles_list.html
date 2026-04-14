@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <h2>Lista de Artículos</h2>
+    <ul>
+        {% for publication in article_list %}
+            <li>
+                {{ publication.title }} - {{ publication.author.username }} ({{ publication.created_at }})
+            </li>
+        {% empty %}
+            <li>No hay artículos disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
